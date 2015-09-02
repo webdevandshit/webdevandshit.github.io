@@ -7,7 +7,7 @@ theme:
   # Meta
   title: Web dev and shit
   avatar:
-  gravatar: 92ed1db12fb9611457a4a5263acad761
+  gravatar: "92ed1db12fb9611457a4a5263acad761"
   description: "JS tips, Angular tricks and web development stories" # used by search engines
 
   # Header and footer text
@@ -34,12 +34,12 @@ theme:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter: "devboytweets"
   wordpress:
   youtube:
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-67061390-1"
   disqus_shortname:
   katex: true # Enable if using math markup
 
