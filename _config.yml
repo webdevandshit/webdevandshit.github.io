@@ -41,7 +41,7 @@ theme:
 
   # Scripts
   google_analytics: "UA-67061390-1"
-  disqus_shortname:
+  disqus_shortname: "webdevandshit"
   katex: true # Enable if using math markup
 
   # Localization strings
