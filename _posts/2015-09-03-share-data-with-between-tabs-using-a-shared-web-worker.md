@@ -18,7 +18,7 @@ I will not fucking explain on this post why someone would use a CSRF token and w
 ![alt text](/blog/img/CSRF.png "Fucking CSRF diagram")
 
 #### The scenario
-Imagine now you have two fucking tabs open of the same application. The tab that interacted last with the fucking server
+Imagine a user having two fucking tabs open of the same single page application. The tab that interacted last with the fucking server
 is the one who obtained the latest CSRF token. This subsequently means that the if the stupid user attempts to use another tab
 other than the one that has the latest CSRF token will get a fucking error. This can cause emotional distress to the user and he might cry.
 
