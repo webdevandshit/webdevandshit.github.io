@@ -24,7 +24,7 @@ other than the one that has the latest CSRF token will get a fucking error. This
 
 The question is how do we communicate this fucking piece of information between tabs without using a persistence layer
 (db, cookies, localstorage). Shared web worker FTW! We will use a fucking mediator to notify all our listeners
-except the publisher, whenever this fucking token has changed.
+except the publisher (if the publisher is not excluded from the "to notify" everything will go tits up == infinite loop), whenever this fucking token has changed.
 
 ![alt text](/img/flow.png "Fucking flow diagram")
 
