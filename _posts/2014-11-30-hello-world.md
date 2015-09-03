@@ -3,5 +3,5 @@ layout: post
 title: Hello World
 ---
 {% highlight js %}
-console.log('Hello World!');
+console.blog('Hello World!');
 {% endhighlight %}
