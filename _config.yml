@@ -1,13 +1,13 @@
 # SITE CONFIGURATION
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
-url: "http://leonpapazianis.github.io/blog" # the base hostname & protocol for your site
+url: "http://webdevandshit.com" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
   title: Web dev and shit
   avatar:
-  gravatar: "92ed1db12fb9611457a4a5263acad761"
+  gravatar: "9E1AC6EBCC37E6D2BCFA9287A3CB83AF"
   description: "JS tips, Angular tricks and web development stories" # used by search engines
 
   # Header and footer text
@@ -24,17 +24,17 @@ theme:
   dribbble:
   facebook:
   flickr:
-  github: "leonpapazianis"
+  github:
   google_plus:
   instagram:
-  linkedin:  "https://uk.linkedin.com/in/leonpapazianis"
+  linkedin:
   pinterest:
   reddit:
   soundcloud:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "devboytweets"
+  twitter: "webdevandshit"
   wordpress:
   youtube:
 
