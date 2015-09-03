@@ -13,15 +13,14 @@ provide the latest issued token and also capture the next token.
 
 In an angular context this logic could be easily be implemented with an interceptor factory; On every request decorate 
 the request with the token and on every response extract the newly issued token and set it in a factory. 
-I will not fucking explain on this post why someone would use a CSRF token and what exactly is, if you are interested you can read
-more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
+I will not fucking explain on this post why someone would use a CSRF token and what exactly is, if you are interested you muppet go and fucking read more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
 
 ![alt text](/blog/img/CSRF.png "Fucking CSRF diagram")
 
 #### The scenario
-Imagine now you have two fucking tabs open of the same application. The tab that interacted last with the server
-is the one who obtained the latest CSRF token. This subsequently means that the if the user attempts to use another tab
-other than the one that has the latest CSRF token will lead into an fucking unhappy path.
+Imagine now you have two fucking tabs open of the same application. The tab that interacted last with the fucking server
+is the one who obtained the latest CSRF token. This subsequently means that the if the stupid user attempts to use another tab
+other than the one that has the latest CSRF token will get a fucking error. This can cause emotional distress to the user and he might cry.
 
 The question is how do we communicate this fucking piece of information between tabs without using a persistence layer
 (db, cookies, localstorage). Shared web worker FTW! We will use a fucking mediator to notify all our listeners
