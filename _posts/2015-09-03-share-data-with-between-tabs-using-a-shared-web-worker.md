@@ -328,6 +328,12 @@ function setCSRFHeaders(headers) {
 #### Tip
 This could be also used to keep other kind of state in sync, among tabs. Fucking login or logout for instance. Logout in tab should log you out in all other fucking tabs.
 
+#### Browser support
+Browser support is [shit](http://caniuse.com/#feat=sharedworkers)
+
+#### Debugging
+To debug a fucking shared web worker visit chrome://inspect/#workers with your chrome browser.
+
 #### Disclaimer
 I do not know the security issues or performance impact shared web workers have. This code is far from fucking perfect and could be massively improved and extended. I am no expert, so everything you read take it with a pinch of salt. Don't go and implement it on your employers fucking codebase without doing research, proving the concept, benchmarking it and writing a good test harness you fucking muppet!!! You never know
 it might be a trap, I might want to get you fired... Now go fuck yourself!
