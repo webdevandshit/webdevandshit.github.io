@@ -15,7 +15,7 @@ In an angular context this logic could be easily be implemented with an intercep
 the request with the token and on every response extract the newly issued token and set it in a factory. 
 I will not fucking explain on this post why someone would use a CSRF token and what exactly is, if you are interested you muppet go and fucking read more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
 
-![alt text](/blog/img/CSRF.png "Fucking CSRF diagram")
+![alt text](/img/CSRF.png "Fucking CSRF diagram")
 
 #### The scenario
 Imagine a user having two fucking tabs open of the same single page application. The tab that interacted last with the fucking server
@@ -26,7 +26,7 @@ The question is how do we communicate this fucking piece of information between 
 (db, cookies, localstorage). Shared web worker FTW! We will use a fucking mediator to notify all our listeners
 except the publisher, whenever this fucking token has changed.
 
-![alt text](/blog/img/flow.png "Fucking flow diagram")
+![alt text](/img/flow.png "Fucking flow diagram")
 
 Note that a shared web worker can be accessed only by the tabs that are under the same domain. Also everything passed
 to a web worker is passed by value not by reference, there are ways of passing data by reference but thats not the
