@@ -246,7 +246,7 @@ var peers = [];
 self.addEventListener('connect', function(e) {
     /**
      * @description
-     * Everytime a connection is established the following is happening:
+     * Every time a connection is established the following is happening:
      * 1) Get the port object
      * 2) Increase the counter
      * 3) Register the new peer and his connection id
