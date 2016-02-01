@@ -5,40 +5,40 @@ title: Sharing data between tabs using a shared web worker
 #### The problem
 Single page apps are dominating the browser world. Thicker client means more responsibility
 which also leads to more complexity. SPA's are long lived entities, therefore having multiple tabs open
-of the same app can actually lead to fucking stale state.
+of the same app can actually lead to stale state.
 
-For the purpose of this fucking post we will examine the use case of a client having to interact with the server providing a CSRF
-token. A CSRF token is one-time short-lived shitty token (nonce). When the client interacts with the server it has to always
+For the purpose of this post we will examine the use case of a client having to interact with the server providing a CSRF
+token. A CSRF token is one-time short-lived token (nonce). When the client interacts with the server it has to always
 provide the latest issued token and also capture the next token. 
 
 In an angular context this logic could be easily implemented with an [interceptor](https://docs.angularjs.org/api/ng/service/$http) factory; Every request can be decorated
-with the token and on every response the newly issued token can be extracted and set in a factory. 
-I will not fucking explain on this post why someone would use a CSRF token and what exactly it is; if you are interested, you muppet, go and fucking read more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
+with the token and every response can be intercepted in order to extract the newly issued token and set into a service.
+I will not explain on this post why someone would use a CSRF token and what exactly it is; if you are interested, read more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
 
-![alt text](/img/CSRF.png "Fucking CSRF diagram")
+![alt text](/img/CSRF.png "CSRF diagram")
 
 #### The scenario
-Imagine a user having two fucking tabs open of the same single page application. The tab that interacted last with the fucking server
-is the one which obtained the latest CSRF token. This subsequently means that if the stupid user attempts to use another tab,
-other than the one that has the latest CSRF token, they will get a fucking error. This can cause emotional distress to the user and they might cry.
+Imagine a user having two tabs open of the same single page application. The tab that interacted last with the server
+is the one which obtained the latest CSRF token. This subsequently means that if the user attempts to use another tab,
+other than the one that has the latest CSRF token, they will get an error.
 
-The question is how do we communicate this fucking piece of information between tabs without using a persistence layer
-(db, cookies, localstorage). Shared web worker FTW! We will use a fucking mediator to notify all our listeners
-except the publisher (if the publisher is not excluded from the "to notify" peers everything will go tits up == infinite loop) whenever this fucking token has changed.
+The question is how do we communicate this piece of information between tabs without using a persistence layer
+(db, cookies, localstorage). Shared web worker FTW! We will use a mediator to notify all our listeners
+except the publisher (if the publisher is not excluded from the "to notify" peers everything the application will go in an infinite loop) whenever this token has changed.
 
 ![alt text](/img/flow.png "Fucking flow diagram")
 
 Note that a shared web worker can be accessed only by the tabs that are under the same domain. Also, everything passed
-to a web worker is passed by value not by reference. There are ways of passing data by reference but that's not
-the fucking purpose of this blog post.
+to a web worker is passed by value not by reference. There are ways of passing data by reference using ArrayBuffers but that's not
+the purpose of this blog post.
 
 #### The solution
 
-The solution below assumes that you fucking use browserify, gulp and ngInject to pack your shitty code. The code is
+The solution below assumes that you use browserify, gulp and ngInject to pack your code. The code is
 organised in a component-like structure:
 
 1. Entry point of the component (index.js)
-2. Run block, fucking Angularjs initialization block (run.js)
+2. Run block, Angularjs initialization block (run.js)
 3. Actual factory (workerFactory.js)
 4. The actual worker code (sharedWorker.js)
 5. Example registering an Event
@@ -325,14 +325,13 @@ function setCSRFHeaders(headers) {
 
 {% endhighlight %}
 #### Tip
-This could also be used to keep other kind of state in sync, among tabs. Fucking logging in or logging out, for instance. Logging out in one tab should log you out in all other fucking tabs.
+This could also be used to keep other kind of state in sync, among tabs. Logging in or logging out, for instance. Logging out in one tab should log you out in all other tabs. Sharing a socket connection rather than all the tabs establishing their own! Sharing a cache layer... The applications are endless
 
 #### Browser support
-Browser support is [shit](http://caniuse.com/#feat=sharedworkers)
+Browser support is [not broad](http://caniuse.com/#feat=sharedworkers)
 
 #### Debugging
-To debug a fucking shared web worker, visit chrome://inspect/#workers with your chrome browser.
+To debug a shared web worker, visit chrome://inspect/#workers with your chrome browser.
 
 #### Disclaimer
-I do not know the security issues or performance impact shared web workers have but you can go find out and fucking let me know (do your own research mofo). This code is far from fucking perfect and could be massively improved and extended. I am no expert, so everything you read take with a pinch of salt. Don't go and implement it on your employer's fucking codebase without doing research, proving the concept, benchmarking it and writing a good test harness, you fucking muppet!!! You never know -
-it might be a trap, I might want to get you fired... Now go fuck yourself!
+This code is far from perfect and could be massively improved and extended. Everything you read take with a pinch of salt. Don't go and implement it on your employer's codebase without doing research, proving the concept, benchmarking it and writing a good test harness.
