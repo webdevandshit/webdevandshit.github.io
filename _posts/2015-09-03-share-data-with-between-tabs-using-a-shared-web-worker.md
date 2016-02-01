@@ -325,7 +325,7 @@ function setCSRFHeaders(headers) {
 
 {% endhighlight %}
 #### Tip
-This could also be used to keep other kind of state in sync, among tabs. Logging in or logging out, for instance. Logging out in one tab should log you out in all other tabs. Sharing a socket connection rather than all the tabs establishing their own! Sharing a cache layer... The applications are endless
+This could also be used to keep other kind of state in sync, among tabs. Logging in or logging out, for instance. Logging out in one tab should log you out in all other tabs. Sharing a socket connection rather than all the tabs establishing their own! Sharing a cache layer... The applications are endless.
 
 #### Browser support
 Browser support is [not broad](http://caniuse.com/#feat=sharedworkers)
