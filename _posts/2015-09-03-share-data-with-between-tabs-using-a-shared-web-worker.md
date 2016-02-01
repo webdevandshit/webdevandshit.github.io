@@ -12,7 +12,7 @@ token. A CSRF token is one-time short-lived token (nonce). When the client inter
 provide the latest issued token and also capture the next token. 
 
 In an angular context this logic could be easily implemented with an [interceptor](https://docs.angularjs.org/api/ng/service/$http) factory; Every request can be decorated
-with the token and every response can be intercepted in order to extract the newly issued token and set into a service.
+with the token and every response can be intercepted in order to extract the newly issued token and store it into a service for future use.
 I will not explain on this post why someone would use a CSRF token and what exactly it is; if you are interested, read more [here](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet).
 
 ![alt text](/img/CSRF.png "CSRF diagram")
